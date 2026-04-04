@@ -240,6 +240,14 @@ PrefabInstance:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2212550271527818658, guid: c6ebdd6173b5ed94592be1aec6528930, type: 3}
+      propertyPath: m_Spring.damper
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212550271527818658, guid: c6ebdd6173b5ed94592be1aec6528930, type: 3}
+      propertyPath: m_Spring.spring
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2798254447675368883, guid: c6ebdd6173b5ed94592be1aec6528930, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -42,7 +42,7 @@ public class ShootManager : MonoBehaviour
             audioSource.Play();
 
             // Not working at the moment
-            rb.AddForce(GetDirection(), ForceMode.Impulse);
+            //rb.AddForce(GetDirection(), ForceMode.Impulse);
             SpawnShootEffect();
             for (int i = 0; i < numberOfProjectiles; i++)
             {
