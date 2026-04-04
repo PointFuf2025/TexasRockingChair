@@ -23,8 +23,9 @@ public class MouseController : MonoBehaviour
 
         yRotation += mouseX;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90, 90);
-        World.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        
+        World.transform.rotation = Quaternion.Euler(0,yRotation ,0 );
+
         
     }
 
