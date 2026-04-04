@@ -323,10 +323,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6396268717417414588, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a59136935bbc5e341a0c345a4494a0c1, type: 2}
+    - target: {fileID: -4289248585834809322, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a59136935bbc5e341a0c345a4494a0c1, type: 2}
+    - target: {fileID: -4220368042532439766, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a59136935bbc5e341a0c345a4494a0c1, type: 2}
+    - target: {fileID: -3500193355355656598, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a59136935bbc5e341a0c345a4494a0c1, type: 2}
+    - target: {fileID: -2786331557702200557, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a59136935bbc5e341a0c345a4494a0c1, type: 2}
     - target: {fileID: 919132149155446097, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
       propertyPath: m_Name
       value: Rocking Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 5084186571228433356, guid: e9a1a2406cfb3914eaad1e155849f976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a59136935bbc5e341a0c345a4494a0c1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
