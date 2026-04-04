@@ -12,9 +12,12 @@ public class FarmManager : MonoBehaviour
     [SerializeField]
     private int Score;
 
+    public float growIncrement;
+
     public int randomCropGrowFactor = 5;
 
     public float cropMaxSize = 5f;
+    public int maxIncrementCount;
 
     private static FarmManager _instance;
 

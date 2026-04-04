@@ -9,7 +9,7 @@ public class CrowManager : MonoBehaviour
     public AudioClip GetRandomDeathSound() 
     { 
         AudioClip predicate = null;
-        if (Random.Range(0, 100) > 95)
+        if (Random.Range(0, 100) > 96)
         { 
             predicate = initCorbSound;
         }
