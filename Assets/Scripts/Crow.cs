@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 public class Crow : MonoBehaviour
 {
     [SerializeField]
-    private Transform target;
+    public Transform target;
 
     GameObject crowVisual;
 
