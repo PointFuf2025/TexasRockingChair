@@ -49,3 +49,4 @@ MonoBehaviour:
   crowSample: {fileID: 8223985583754485001, guid: 4ad23c8d3d62127459133065d4c80c69, type: 3}
   crowRoot: {fileID: 0}
   spawnRadius: 10
+  crowDeathEffect: {fileID: 8745583911162945494, guid: abee5f400176eea47ae88dd5bdd09e33, type: 3}
