@@ -38,6 +38,8 @@ public class ShootManager : MonoBehaviour
 
     [SerializeField]
     private Animator playerAnimator;
+    [SerializeField]
+    private CrowManager crowManager;
 
     private float LastShootTime;
 
@@ -59,6 +61,12 @@ public class ShootManager : MonoBehaviour
                 if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
                 {
                     Debug.Log($"raycast hit{hit.collider.name}");
+                    Crow hitCrow = (Crow)hit.transform.GetComponent("Crow");
+                    if (hitCrow != null)
+                    {
+                        crowManager.KillCrow(hitCrow);
+                        Destroy(hitCrow.gameObject);
+                    }
                     TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
                     
                     
