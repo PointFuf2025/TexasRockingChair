@@ -28,6 +28,9 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource = null;
 
+    [SerializeField]
+    private Rigidbody rb;
+
     private float LastShootTime;
 
     public void Shoot()
@@ -35,6 +38,9 @@ public class ShootManager : MonoBehaviour
         if (LastShootTime + ShootDelay < Time.time)
         {
             audioSource.Play();
+
+            // Not working at the moment
+            rb.AddForce(GetDirection(), ForceMode.Impulse);
 
             for (int i = 0; i < numberOfProjectiles; i++)
             {
@@ -67,7 +73,7 @@ public class ShootManager : MonoBehaviour
 
     private Vector3 GetDirection()
     {
-        Vector3 direction = transform.forward;
+        Vector3 direction = BulletSpawnPoint.forward;
 
         if (AddBulletSpread)
         {
