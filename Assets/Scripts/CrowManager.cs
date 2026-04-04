@@ -3,6 +3,23 @@ using UnityEngine;
 
 public class CrowManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip initCorbSound;
+    [SerializeField] private AudioClip[] crowDeathSound;
+
+    public AudioClip GetRandomDeathSound() 
+    { 
+        AudioClip predicate = null;
+        if (Random.Range(0, 100) > 95)
+        { 
+            predicate = initCorbSound;
+        }
+        else 
+        { 
+            predicate = crowDeathSound[Random.Range(0,crowDeathSound.Length)];
+        }
+        return predicate;
+    }
+
     [SerializeField]
     private List<Crow> crowList = new List<Crow>();
 
@@ -54,7 +71,7 @@ public class CrowManager : MonoBehaviour
         {
             if (crowList[i] == crow)
             {
-                crow.KillCrow(crowDeathEffect);
+                crow.KillCrow(crowDeathEffect,GetRandomDeathSound());
                 crowList.RemoveAt(i);
                 Destroy(crow.gameObject);
                 break;

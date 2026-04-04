@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f467f534b6edb546b316ede2db6a462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  initCorbSound: {fileID: 8300000, guid: 05223a7fc792b3d43946564e54bef0e8, type: 3}
+  crowDeathSound:
+  - {fileID: 8300000, guid: 928ec58914d8abc4d877c87dcf47a269, type: 3}
+  - {fileID: 8300000, guid: 409a44179a437ea499da167718383549, type: 3}
+  - {fileID: 8300000, guid: 04158f06337308943a469dda20971f1c, type: 3}
+  - {fileID: 8300000, guid: f84bf4d1bdd6658419dff5f1b490d517, type: 3}
   crowList: []
   CrowSpawnRate: 3
   crowSample: {fileID: 8223985583754485001, guid: 4ad23c8d3d62127459133065d4c80c69, type: 3}

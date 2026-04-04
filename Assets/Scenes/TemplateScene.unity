@@ -185,7 +185,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 503
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -369,6 +369,46 @@ PrefabInstance:
       propertyPath: crowDeathEffect
       value: 
       objectReference: {fileID: 8745583911162945494, guid: abee5f400176eea47ae88dd5bdd09e33, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: crowDeathSound.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 928ec58914d8abc4d877c87dcf47a269, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 409a44179a437ea499da167718383549, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 04158f06337308943a469dda20971f1c, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: df8d1b87f3441094d993eb073a6e086b, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 89e97e20d682e1146b6a591d8d11b1f1, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f84bf4d1bdd6658419dff5f1b490d517, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9bedc1ee258d44a4a97a74b5216252f0, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 60096b38d96249f48a8bdfe8ccad6d28, type: 3}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: 'crowDeathSound.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 28d4dec0e1e09174380847992ef2b9ec, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -873,9 +913,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 270354730}
     m_Modifications:
+    - target: {fileID: 1806032820557219392, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763350511511147245, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6475242524254860775, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
       propertyPath: m_Name
       value: LD (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475242524254860775, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602672073431600021, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590407422568684726, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763585636571586270, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8492277251889848738, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1183,6 +1247,10 @@ PrefabInstance:
       propertyPath: ForcePoint
       value: 
       objectReference: {fileID: 1804454803}
+    - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
+      propertyPath: Mask.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
     - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
       propertyPath: crowManager
       value: 

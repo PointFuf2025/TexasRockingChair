@@ -20,7 +20,7 @@ public class Crow : MonoBehaviour
         crowVisual.transform.localPosition = Vector3.zero;
     }
 
-    public void KillCrow(GameObject _effect) 
+    public void KillCrow(GameObject _effect, AudioClip _clip) 
     { 
         
         GameObject newPs = Instantiate(_effect);
@@ -28,6 +28,8 @@ public class Crow : MonoBehaviour
         newPs.transform.localPosition = Vector3.zero;
         crowVisual.gameObject.SetActive(false);
         newPs.transform.parent = MouseController.instance.World;
+        newPs.GetComponent<AudioSource>().clip = _clip;
+        newPs.GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame

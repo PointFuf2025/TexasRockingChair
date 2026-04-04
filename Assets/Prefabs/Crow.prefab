@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5772808731408951529}
   - component: {fileID: 4237475397613488532}
   - component: {fileID: 2434101661943636926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,6 +210,10 @@ PrefabInstance:
     - target: {fileID: 6879439120924050330, guid: 166085479289b264c9e6c1ae841cc690, type: 3}
       propertyPath: m_Name
       value: CorbeauVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879439120924050330, guid: 166085479289b264c9e6c1ae841cc690, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
