@@ -47,14 +47,15 @@ public class CrowManager : MonoBehaviour
 
     public void KillCrow(Crow crow)
     {
-        foreach (var c in crowList)
+        for (int i = 0; i < crowList.Count; i++)
         {
-            if (c == crow)
+            if (crowList[i] == crow)
             {
-                crowList.Remove(c);
+                crowList.RemoveAt(i);
                 Destroy(crow.gameObject);
+                break;
             }
-        }
+        }      
     }
 
     private void OnDrawGizmos()

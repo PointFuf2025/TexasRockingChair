@@ -41,6 +41,9 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private CrowManager crowManager;
 
+    [SerializeField]
+    private Transform trailRoot;
+
     private float LastShootTime;
 
     public void Shoot()
@@ -67,10 +70,11 @@ public class ShootManager : MonoBehaviour
                         crowManager.KillCrow(hitCrow);
                         Destroy(hitCrow.gameObject);
                     }
-                    TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+
+                    // TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity, trailRoot);
                     
                     
-                    StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true));
+                    // StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true));
 
                     LastShootTime = Time.time;
                 }
@@ -78,10 +82,10 @@ public class ShootManager : MonoBehaviour
                 else
                 {
                     Debug.Log($"raycast not hit");
-                    TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+                    // TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity, trailRoot);
                     
 
-                    StartCoroutine(SpawnTrail(trail, BulletSpawnPoint.position + GetDirection() * 100, Vector3.zero, false));
+                    // StartCoroutine(SpawnTrail(trail, BulletSpawnPoint.position + GetDirection() * 100, Vector3.zero, false));
 
                     LastShootTime = Time.time;
                 }
@@ -113,7 +117,7 @@ public class ShootManager : MonoBehaviour
             direction.Normalize();
         }
 
-        return direction * 5000;
+        return direction;
     }
 
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact)
