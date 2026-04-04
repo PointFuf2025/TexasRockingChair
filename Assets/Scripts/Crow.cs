@@ -20,6 +20,10 @@ public class Crow : MonoBehaviour
         crowVisual.transform.localPosition = Vector3.zero;
     }
 
+    public void PreDeathEffect() 
+    { 
+        crowVisual.GetComponent<SpriteRenderer>().color = Color.white;
+    }
     public void KillCrow(GameObject _effect, AudioClip _clip) 
     { 
         

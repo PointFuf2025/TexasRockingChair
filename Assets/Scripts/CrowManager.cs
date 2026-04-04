@@ -71,9 +71,11 @@ public class CrowManager : MonoBehaviour
         {
             if (crowList[i] == crow)
             {
-                crow.KillCrow(crowDeathEffect,GetRandomDeathSound());
+                crow.PreDeathEffect();
+                crow.KillCrow(crowDeathEffect, GetRandomDeathSound());
                 crowList.RemoveAt(i);
                 Destroy(crow.gameObject);
+
                 break;
             }
         }      
