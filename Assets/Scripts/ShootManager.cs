@@ -8,13 +8,15 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private Vector3 BulletSpreadVariance = new Vector3(0.1f, 0.1f, 0.1f);
     [SerializeField]
-    private ParticleSystem ShootingSystem;
+    private ParticleSystem ShootEffect;
     [SerializeField]
     private Transform BulletSpawnPoint;
     [SerializeField]
     private ParticleSystem ImpactParticleSystem;
     [SerializeField]
     private TrailRenderer BulletTrail;
+    [SerializeField]
+    private LineRenderer TrailEffect;
     [SerializeField]
     private float ShootDelay = 0.5f;
     [SerializeField]
@@ -41,10 +43,10 @@ public class ShootManager : MonoBehaviour
 
             // Not working at the moment
             rb.AddForce(GetDirection(), ForceMode.Impulse);
-
+            SpawnShootEffect();
             for (int i = 0; i < numberOfProjectiles; i++)
             {
-                ShootingSystem.Play();
+                
                 Vector3 direction = GetDirection();
 
                 Debug.DrawRay(BulletSpawnPoint.position, direction, Color.blue, 100f);
@@ -52,7 +54,8 @@ public class ShootManager : MonoBehaviour
                 {
                     Debug.Log($"raycast hit{hit.collider.name}");
                     TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
-
+                    
+                    
                     StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true));
 
                     LastShootTime = Time.time;
@@ -62,6 +65,7 @@ public class ShootManager : MonoBehaviour
                 {
                     Debug.Log($"raycast not hit");
                     TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+                    
 
                     StartCoroutine(SpawnTrail(trail, BulletSpawnPoint.position + GetDirection() * 100, Vector3.zero, false));
 
@@ -71,9 +75,18 @@ public class ShootManager : MonoBehaviour
         }
     }
 
+    public void SpawnShootEffect() 
+    {
+        ParticleSystem newShootEffect = Instantiate(ShootEffect);
+        newShootEffect.transform.parent = BulletSpawnPoint;
+        newShootEffect.transform.localPosition = Vector3.zero;
+        newShootEffect.transform.LookAt(MouseController.instance.ShootPoint.position);
+        newShootEffect.transform.parent = MouseController.instance.World;
+    }
+
     private Vector3 GetDirection()
     {
-        Vector3 direction = BulletSpawnPoint.forward;
+        Vector3 direction =  MouseController.instance.ShootPoint.position - BulletSpawnPoint.position;
 
         if (AddBulletSpread)
         {
@@ -86,7 +99,7 @@ public class ShootManager : MonoBehaviour
             direction.Normalize();
         }
 
-        return direction;
+        return direction * 5000;
     }
 
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact)
@@ -96,6 +109,8 @@ public class ShootManager : MonoBehaviour
         Vector3 startPosition = Trail.transform.position;
         float distance = Vector3.Distance(Trail.transform.position, HitPoint);
         float remainingDistance = distance;
+        //Trail.transform.parent = MouseController.instance.transform;
+
 
         while (remainingDistance > 0)
         {

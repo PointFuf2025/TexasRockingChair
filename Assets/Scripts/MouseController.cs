@@ -5,8 +5,11 @@ public class MouseController : MonoBehaviour
 {
     public Transform World;
     public Transform CrossHairPivot;
+    public Transform ShootPoint;
     public float sensX;
     public float sensY;
+
+    public static MouseController instance;
 
     float yRotation;
     float xRotation;
@@ -15,6 +18,14 @@ public class MouseController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     public void CameraLook()
