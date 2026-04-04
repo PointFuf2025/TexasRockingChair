@@ -36,6 +36,9 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
 
+    [SerializeField]
+    private Animator playerAnimator;
+
     private float LastShootTime;
 
     public void Shoot()
@@ -43,7 +46,7 @@ public class ShootManager : MonoBehaviour
         if (LastShootTime + ShootDelay < Time.time)
         {
             audioSource.Play();
-
+            playerAnimator.SetTrigger("Shoot");
             // Not working at the moment
             rb.AddExplosionForce(100, ForcePoint.position, 15, 1, ForceMode.Impulse);
             SpawnShootEffect();
