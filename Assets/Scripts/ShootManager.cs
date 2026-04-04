@@ -11,6 +11,9 @@ public class ShootManager : MonoBehaviour
     private ParticleSystem ShootEffect;
     [SerializeField]
     private Transform BulletSpawnPoint;
+
+    [SerializeField] private Transform ForcePoint;
+
     [SerializeField]
     private ParticleSystem ImpactParticleSystem;
     [SerializeField]
@@ -42,7 +45,7 @@ public class ShootManager : MonoBehaviour
             audioSource.Play();
 
             // Not working at the moment
-            //rb.AddForce(GetDirection(), ForceMode.Impulse);
+            rb.AddExplosionForce(100, ForcePoint.position, 15, 1, ForceMode.Impulse);
             SpawnShootEffect();
             for (int i = 0; i < numberOfProjectiles; i++)
             {
