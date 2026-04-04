@@ -26,11 +26,16 @@ public class Crop : MonoBehaviour
         currentPos = initialVisualPos;
         cropFx = transform.GetChild(1).GetComponent<ParticleSystem>();
         cropAudio = GetComponent<AudioSource>();
+        if(Random.Range(0f,1f) > 0.5f) 
+        { 
+            cropVisual.flipX = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        cropVisual.transform.LookAt(Camera.main.transform.position);
         if (isDead)
         {
             return;

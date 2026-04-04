@@ -18,6 +18,10 @@ public class Crow : MonoBehaviour
         target = FarmManager.Instance.GetRandomCrop().transform;
         crowVisual = transform.GetChild(0).gameObject;
         crowVisual.transform.localPosition = Vector3.zero;
+        if (Random.Range(0f, 1f) > 0.5f)
+        {
+            crowVisual.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     public void PreDeathEffect() 
