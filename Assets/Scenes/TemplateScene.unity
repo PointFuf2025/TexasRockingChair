@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: crowRoot
       value: 
       objectReference: {fileID: 2080766161}
+    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
+      propertyPath: crowDeathEffect
+      value: 
+      objectReference: {fileID: 8745583911162945494, guid: abee5f400176eea47ae88dd5bdd09e33, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
