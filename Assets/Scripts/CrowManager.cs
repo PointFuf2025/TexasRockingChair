@@ -20,6 +20,9 @@ public class CrowManager : MonoBehaviour
 
     private float timer = 0;
 
+    [SerializeField]
+    private GameObject crowDeathEffect;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +54,7 @@ public class CrowManager : MonoBehaviour
         {
             if (crowList[i] == crow)
             {
+                crow.KillCrow(crowDeathEffect);
                 crowList.RemoveAt(i);
                 Destroy(crow.gameObject);
                 break;
