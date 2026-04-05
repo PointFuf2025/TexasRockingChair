@@ -13,6 +13,9 @@ public class Crow : MonoBehaviour
     [SerializeField]
     private float cropEatingSpeed = 3f;
 
+    [SerializeField]
+    private ParticleSystem CropEatingMiamMiamMiam;
+
     private bool isEatingCrop = false;
     public Crop cropTarget;
 
@@ -72,6 +75,7 @@ public class Crow : MonoBehaviour
             if (this.crowEatingSound.isPlaying)
             {
                 this.crowEatingSound.Pause();
+                CropEatingMiamMiamMiam.Stop();
             }
             
             return;
@@ -100,5 +104,6 @@ public class Crow : MonoBehaviour
     {
         this.isEatingCrop = true;
         this.crowEatingSound.Play();
+        CropEatingMiamMiamMiam.Play();
     }
 }
