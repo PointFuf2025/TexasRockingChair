@@ -6,9 +6,9 @@ public class CameraMainMenu : MonoBehaviour
     public Camera[] allCameras;
     public Camera currentCam;
     int camIndex;
-
+    public bool canplay;
     public float camTimer;
-    float timer;
+    public float timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,7 +35,7 @@ public class CameraMainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer > camTimer) 
+        if(timer > camTimer && canplay) 
         { 
             timer = 0;
             ChangeCamera();
