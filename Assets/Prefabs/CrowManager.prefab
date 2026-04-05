@@ -58,9 +58,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 28d4dec0e1e09174380847992ef2b9ec, type: 3}
   crowSpawnSound: {fileID: 4266798517321353137}
   crowList: []
-  CrowSpawnRate: 3
+  CrowSpawnRate: 5
   crowSample: {fileID: 8223985583754485001, guid: 4ad23c8d3d62127459133065d4c80c69, type: 3}
-  crowRoot: {fileID: 0}
+  crowRoot:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnRadius: 10
   crowDeathEffect: {fileID: 8745583911162945494, guid: abee5f400176eea47ae88dd5bdd09e33, type: 3}
 --- !u!82 &4266798517321353137
@@ -75,7 +78,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d0a0fd969961cca459d26b7cff1f5c7b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

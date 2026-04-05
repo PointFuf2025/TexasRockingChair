@@ -32,7 +32,7 @@ public class CrowManager : MonoBehaviour
     private GameObject crowSample;
 
     [SerializeField]
-    private Transform crowRoot;
+    private List<Transform> crowRoot;
 
     [SerializeField]
     private float spawnRadius = 10f;
@@ -53,13 +53,11 @@ public class CrowManager : MonoBehaviour
     {
         if (timer > CrowSpawnRate)
         {
-            Vector2 randomPoint = Random.insideUnitSphere * spawnRadius;
-            Vector3 spawnPosition = crowRoot.position + new Vector3(randomPoint.x, 0, randomPoint.y);
-            crowSpawnSound.Play();
-            var crowObject = Instantiate(crowSample, spawnPosition, Quaternion.identity, crowRoot);
-            var crow = crowObject.GetComponent<Crow>();
-            crowList.Add(crow);
-            timer = 0;
+            int crowAmount = Random.Range(0, 3);
+            for(int i = 0;i<crowAmount;i++) 
+            {
+                SpawnACrow();
+            }
         }
         else
         {
@@ -67,9 +65,21 @@ public class CrowManager : MonoBehaviour
         }
     }
 
-    public void GetSpawnPosition()
+    public void SpawnACrow() 
+    {
+        Transform spawnPoint = GetSpawnPosition();
+        Vector2 randomPoint = Random.insideUnitSphere * spawnRadius;
+        Vector3 spawnPosition = spawnPoint.position + new Vector3(randomPoint.x, 0, randomPoint.y);
+        crowSpawnSound.Play();
+        var crowObject = Instantiate(crowSample, spawnPosition, Quaternion.identity, spawnPoint);
+        var crow = crowObject.GetComponent<Crow>();
+        crowList.Add(crow);
+        timer = 0;
+    }
+
+    public Transform GetSpawnPosition()
     { 
-        
+        return crowRoot[Random.Range(0, crowRoot.Count)];
     }
 
     public void KillCrow(Crow crow)
@@ -90,7 +100,15 @@ public class CrowManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(crowRoot.position, 10);
+        if(crowRoot == null) 
+        {
+            foreach (Transform t in crowRoot)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere(t.position, 10);
+            }
+        }
+        
+        
     }
 }
