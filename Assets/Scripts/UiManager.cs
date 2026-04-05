@@ -6,6 +6,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private GameObject cornCountItem;
     [SerializeField] private GameObject cornCountainer;
+    [SerializeField] private Animation scoreAnim;
+    [SerializeField] private ParticleSystem scorePS;
     public static UiManager instance;
     public int cornIndex;
 
@@ -37,6 +39,9 @@ public class UiManager : MonoBehaviour
 
     public void UpdateScore(int score) 
     {
-        scoreText.text = "Score " + score;
+        scoreText.text = score.ToString();
+        scoreAnim.Rewind();
+        scoreAnim.Play();
+        scorePS.Play();
     }
 }
