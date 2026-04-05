@@ -1,21 +1,27 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.VFX;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 public class Crow : MonoBehaviour
 {
-    [SerializeField]
-    public Transform target;
-
     GameObject crowVisual;
 
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float cropEatingSpeed = 3f;
+
+    private bool isEatingCrop = false;
+    public Crop cropTarget;
+
+    private float timer = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = FarmManager.Instance.GetRandomCrop().transform;
+        cropTarget = FarmManager.Instance.GetRandomCrop();
         crowVisual = transform.GetChild(0).gameObject;
         crowVisual.transform.localPosition = Vector3.zero;
         if (Random.Range(0f, 1f) > 0.5f)
@@ -30,7 +36,6 @@ public class Crow : MonoBehaviour
     }
     public void KillCrow(GameObject _effect, AudioClip _clip) 
     { 
-        
         GameObject newPs = Instantiate(_effect);
         newPs.transform.parent = crowVisual.transform;
         newPs.transform.localPosition = Vector3.zero;
@@ -46,9 +51,45 @@ public class Crow : MonoBehaviour
         // Move towards the target position
         transform.position = Vector3.MoveTowards(
             transform.position,
-            target.position,
+            cropTarget.topTarget.position,
             speed * Time.deltaTime
         );
         crowVisual.transform.LookAt(Camera.main.transform.position, Vector3.up);
+
+        // change target if dead (killed by another crow)
+        if (this.cropTarget.isDead)
+        {
+            this.cropTarget = FarmManager.Instance.GetRandomCrop();
+            timer = 0;
+            isEatingCrop = false;
+        }
+
+        if (!isEatingCrop)
+        {
+            return;
+        }
+
+        if (timer > cropEatingSpeed)
+        {
+            /*
+            float randomGrow = Random.Range(1, FarmManager.Instance.randomCropGrowFactor) / 10f;
+            var toto = new Vector3(0, randomGrow, 0);
+            this.transform.localScale += toto;
+            */
+            
+            cropTarget.OnCropDeath();
+            isEatingCrop = false;
+            timer = 0;
+            this.cropTarget = FarmManager.Instance.GetRandomCrop();
+        }
+        else
+        {
+            timer += Time.deltaTime;
+        }
+    }
+
+    public void StartEatCrop()
+    {
+        this.isEatingCrop = true;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class FarmManager : MonoBehaviour
 {
     [SerializeField]
-    public List<Crop> crops;
+    public Crop[] crops;
 
     public List<Crop> aliveCrops = new List<Crop>();
 
@@ -37,12 +37,12 @@ public class FarmManager : MonoBehaviour
             {
                 Instance = this;
             }
-            crops = new List<Crop>();
     }
 
     public void Start()
     {
-        for (int i = 0; i < crops.Count; i++)
+        this.crops = FindObjectsByType<Crop>();
+        for (int i = 0; i < crops.Length; i++)
         {
             aliveCrops.Add(crops[i]);
         }
