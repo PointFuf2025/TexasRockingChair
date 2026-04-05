@@ -272,8 +272,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   playButton: {fileID: 8759587882807895773}
   creditButton: {fileID: 3042052284741661234}
+  controlsButton: {fileID: 3329128861821544909}
   backButton: {fileID: 7162863038837774508}
   creditCamera: {fileID: 0}
+  controlsCamera: {fileID: 0}
   camInstance: {fileID: 0}
 --- !u!1 &3441836888362036259
 GameObject:
@@ -350,7 +352,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4286578688
-  m_fontColor: {r: 0, g: 0, b: 0.5019608, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -843,7 +845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 694, y: -439}
+  m_AnchoredPosition: {x: 698, y: -354.06}
   m_SizeDelta: {x: 324.2173, y: 66.93567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7162863038837774508
@@ -918,7 +920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2118591992, guid: 9387d7ce925c78649ad38f3c725f74cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
