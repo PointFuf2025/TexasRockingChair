@@ -8,7 +8,7 @@ public class Crow : MonoBehaviour
     GameObject crowVisual;
 
     [SerializeField]
-    private float speed;
+    public float speed;
 
     [SerializeField]
     private float cropEatingSpeed = 3f;

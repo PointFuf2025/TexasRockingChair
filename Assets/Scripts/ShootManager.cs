@@ -16,6 +16,8 @@ public class ShootManager : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem ImpactParticleSystem;
+
+    [SerializeField] private ParticleSystem MuzzleFlash;
     [SerializeField]
     private TrailRenderer BulletTrail;
     [SerializeField]
@@ -109,6 +111,7 @@ public class ShootManager : MonoBehaviour
         newShootEffect.transform.localPosition = Vector3.zero;
         newShootEffect.transform.LookAt(MouseController.instance.ShootPoint.position);
         newShootEffect.transform.parent = MouseController.instance.World;
+        MuzzleFlash.Play();
     }
 
     private Vector3 GetDirection()

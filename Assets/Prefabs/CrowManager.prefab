@@ -59,6 +59,7 @@ MonoBehaviour:
   crowSpawnSound: {fileID: 4266798517321353137}
   crowList: []
   CrowSpawnRate: 5
+  globalCrowSpeed: 3
   crowSample: {fileID: 8223985583754485001, guid: 4ad23c8d3d62127459133065d4c80c69, type: 3}
   crowRoot:
   - {fileID: 0}

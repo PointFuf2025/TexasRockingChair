@@ -11,6 +11,7 @@ public class FarmManager : MonoBehaviour
 
     [SerializeField]
     private int Score;
+    int internalScore;
 
     [SerializeField] public AudioSource cropDeathSound;
 
@@ -49,6 +50,26 @@ public class FarmManager : MonoBehaviour
         }
     }
 
+    public void CheckForLevelUp() 
+    { 
+        if(internalScore > 10) 
+        { 
+            LevelUp();
+            internalScore = 0;
+        }
+        else 
+        {
+            internalScore++;
+        }
+
+    }
+
+    public void LevelUp() 
+    {
+        CrowManager.instance.globalCrowSpeed += 0.5f;
+        CrowManager.instance.CrowSpawnRate -= 0.5f;
+    }
+
     public Crop GetRandomCrop()
     {
         int randomCropIndex = Random.Range(0, aliveCrops.Count - 1);
@@ -60,6 +81,7 @@ public class FarmManager : MonoBehaviour
     {
         Score++;
         UiManager.instance.UpdateScore(Score);
+        CheckForLevelUp();
     }
 
     public void CheckGameOver()

@@ -22,11 +22,15 @@ public class CrowManager : MonoBehaviour
         return predicate;
     }
 
+    public static CrowManager instance;
+
     [SerializeField]
     private List<Crow> crowList = new List<Crow>();
 
     [SerializeField]
-    private float CrowSpawnRate = 3f;
+    public float CrowSpawnRate = 5f;
+
+    public float globalCrowSpeed = 3;
 
     [SerializeField]
     private GameObject crowSample;
@@ -45,7 +49,14 @@ public class CrowManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     // Update is called once per frame
@@ -73,6 +84,7 @@ public class CrowManager : MonoBehaviour
         crowSpawnSound.Play();
         var crowObject = Instantiate(crowSample, spawnPosition, Quaternion.identity, spawnPoint);
         var crow = crowObject.GetComponent<Crow>();
+        crow.speed = globalCrowSpeed;
         crowList.Add(crow);
         timer = 0;
     }

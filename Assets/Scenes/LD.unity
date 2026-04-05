@@ -523,10 +523,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7511486135058181723, guid: a960a38b26d0ebd42ac24cbb0d0266df, type: 3}
-      propertyPath: DeadCrop
-      value: 
-      objectReference: {fileID: 21300000, guid: c6ab47f50e6afa848bf7fbf76b775869, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -852,6 +848,11 @@ Transform:
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3956760129921120035, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
   m_PrefabInstance: {fileID: 2125684546983298755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1393139716 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6273359613669429934, guid: a6bbb9fb318f51a48ba58d6fa6ad5244, type: 3}
+  m_PrefabInstance: {fileID: 2522096799614427382}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1416199677
 GameObject:
@@ -10826,6 +10827,10 @@ PrefabInstance:
       value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
+      propertyPath: MuzzleFlash
+      value: 
+      objectReference: {fileID: 1393139716}
+    - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
       propertyPath: crowManager
       value: 
       objectReference: {fileID: 290492647}
@@ -11042,6 +11047,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 455
       objectReference: {fileID: 0}
+    - target: {fileID: 6218606081633566243, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218606081633566243, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218606081633566243, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -27.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530396844366214917, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530396844366214917, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_fontSize
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530396844366214917, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dd4f9c6d17905814ebbef1901389248d, type: 2}
+    - target: {fileID: 6530396844366214917, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530396844366214917, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4660836837908655240, guid: dd4f9c6d17905814ebbef1901389248d, type: 2}
+    - target: {fileID: 6530396844366214917, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7485475847668143603, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
       propertyPath: scorePS
       value: 
@@ -11063,18 +11104,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1396854486110014176, guid: a6bbb9fb318f51a48ba58d6fa6ad5244, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.038
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396854486110014176, guid: a6bbb9fb318f51a48ba58d6fa6ad5244, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.031
-      objectReference: {fileID: 0}
-    - target: {fileID: 1396854486110014176, guid: a6bbb9fb318f51a48ba58d6fa6ad5244, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 3049153930990167110, guid: a6bbb9fb318f51a48ba58d6fa6ad5244, type: 3}
       propertyPath: m_Name
       value: Character
