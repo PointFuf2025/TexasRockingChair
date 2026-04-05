@@ -65,8 +65,8 @@ public class FarmManager : MonoBehaviour
     public void CheckGameOver()
     {
         if (aliveCrops.Count <= 0) 
-        { 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
