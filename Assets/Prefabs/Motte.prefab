@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2281723793426232349}
   - component: {fileID: 1261770669306511889}
-  - component: {fileID: 4453346506784527806}
   m_Layer: 6
   m_Name: Motte
   m_TagString: Untagged
@@ -92,15 +91,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4453346506784527806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873696612188291223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa9f5955fddafe42b82a4a025fa2efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
