@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec02d44db9a6c94b82146d5c2e1b000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  musique: []
+  musique:
+  - {fileID: 8300000, guid: b8937b5a3a04d7944b95d7327d300479, type: 3}
+  - {fileID: 8300000, guid: 59f9f639ade57f54cb5b9fef11f74294, type: 3}
   musiqueSource: {fileID: 8024599463713776095}
 --- !u!82 &8024599463713776095
 AudioSource:
@@ -62,7 +64,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
