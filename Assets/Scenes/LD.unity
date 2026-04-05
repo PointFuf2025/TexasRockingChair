@@ -433,7 +433,7 @@ MonoBehaviour:
   World: {fileID: 270354730}
   CrossHairPivot: {fileID: 597298720}
   ShootPoint: {fileID: 1797186800}
-  sensX: 500
+  sensX: -500
   sensY: 1000
 --- !u!1001 &290492646
 PrefabInstance:
