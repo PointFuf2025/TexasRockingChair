@@ -4,12 +4,11 @@ using UnityEngine;
 public class UiManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private GameObject cornCountItem;
-    [SerializeField] private GameObject cornCountainer;
+    [SerializeField] private TMP_Text cropCountText;
     [SerializeField] private Animation scoreAnim;
     [SerializeField] private ParticleSystem scorePS;
     public static UiManager instance;
-    public int cornIndex;
+    public int cropCount;
 
     private void Awake()
     {
@@ -25,16 +24,14 @@ public class UiManager : MonoBehaviour
 
     public void AddCorn() 
     { 
-        GameObject newCorn = Instantiate(cornCountItem);
-        newCorn.transform.SetParent(cornCountainer.transform, false);
-        newCorn.transform.localScale = Vector3.one;
-        newCorn.transform.localPosition = Vector3.zero;
+        cropCount++;
+        this.cropCountText.text = cropCount.ToString();
     }
 
     public void RemoveCorn() 
-    { 
-        cornCountainer.transform.GetChild(cornIndex).gameObject.SetActive(false);
-        cornIndex++;
+    {
+        cropCount--;
+        this.cropCountText.text = cropCount.ToString();
     }
 
     public void UpdateScore(int score) 

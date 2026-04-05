@@ -24,8 +24,16 @@ public class ShootManager : MonoBehaviour
     private LineRenderer TrailEffect;
     [SerializeField]
     private float ShootDelay = 0.5f;
+
     [SerializeField]
-    private LayerMask Mask;
+    private float PlantShootDelay = 5f;
+
+    [SerializeField]
+    private LayerMask ShootMask;
+
+    [SerializeField]
+    private LayerMask PlantMask;
+
     [SerializeField]
     private float BulletSpeed = 100;
 
@@ -63,7 +71,6 @@ public class ShootManager : MonoBehaviour
         {
             audioSource.Play();
             playerAnimator.SetTrigger("Shoot");
-            // Not working at the moment
             rb.AddExplosionForce(100, ForcePoint.position, 15, 1, ForceMode.Impulse);
             SpawnShootEffect();
             for (int i = 0; i < numberOfProjectiles; i++)
@@ -72,7 +79,7 @@ public class ShootManager : MonoBehaviour
                 Vector3 direction = GetDirection();
 
                 Debug.DrawRay(BulletSpawnPoint.position, direction, Color.blue, 3f);
-                if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
+                if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, ShootMask))
                 {
                     Debug.Log($"raycast hit{hit.collider.name}");
                     Crow hitCrow = (Crow)hit.transform.GetComponent("Crow");
@@ -101,6 +108,28 @@ public class ShootManager : MonoBehaviour
                     LastShootTime = Time.time;
                 }
             }
+        }
+    }
+
+    public void Plant()
+    {
+        if (LastShootTime + PlantShootDelay < Time.time)
+        {
+            // TODO tweak to have other anims
+            audioSource.Play();
+            playerAnimator.SetTrigger("Shoot");
+            rb.AddExplosionForce(100, ForcePoint.position, 15, 1, ForceMode.Impulse);
+            SpawnShootEffect();
+
+            Vector3 direction = MouseController.instance.ShootPoint.position - BulletSpawnPoint.position;
+            direction.Normalize();
+
+            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, PlantMask))
+            {
+                FarmManager.Instance.PlantCrop(hit.point);
+            }
+
+            LastShootTime = Time.time;
         }
     }
 

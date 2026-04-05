@@ -523,6 +523,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7511486135058181723, guid: a960a38b26d0ebd42ac24cbb0d0266df, type: 3}
+      propertyPath: DeadCrop
+      value: 
+      objectReference: {fileID: 21300000, guid: c6ab47f50e6afa848bf7fbf76b775869, type: 3}
+    - target: {fileID: 7511486135058181723, guid: a960a38b26d0ebd42ac24cbb0d0266df, type: 3}
+      propertyPath: cropRoot
+      value: 
+      objectReference: {fileID: 1662102061}
+    - target: {fileID: 7511486135058181723, guid: a960a38b26d0ebd42ac24cbb0d0266df, type: 3}
+      propertyPath: cropSample
+      value: 
+      objectReference: {fileID: 1750194126530782204, guid: 7505103b1b56f84449b2a49d7a822ac6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10738,6 +10750,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8492277251889848738, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
   m_PrefabInstance: {fileID: 1662102057}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1662102061 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2471888914209501230, guid: ed7f57ff593a52a4d8abad8e91657d75, type: 3}
+  m_PrefabInstance: {fileID: 1662102057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!111 &1769884490 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 8443211131076954023, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
@@ -11005,6 +11022,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 366722353}
     - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
+      propertyPath: PlantMask.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
+      propertyPath: ShootMask.m_Bits
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 943453556069378240, guid: d2f58a75851b5dc4898b54bb4c094f98, type: 3}
       propertyPath: numberOfProjectiles
       value: 10
       objectReference: {fileID: 0}
@@ -11120,6 +11145,10 @@ PrefabInstance:
     - target: {fileID: 4131237497622992034, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.939
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688024377067233707, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -65.99994
       objectReference: {fileID: 0}
     - target: {fileID: 5941753441736856021, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
       propertyPath: m_Pivot.x
@@ -11253,6 +11282,18 @@ PrefabInstance:
       propertyPath: scoreAnim
       value: 
       objectReference: {fileID: 1769884490}
+    - target: {fileID: 8034706085157492620, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 127.999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122899189485533544, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 29.071503
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122899189485533544, guid: 31606fc384a42e7459f7daa481f86bde, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -27.978607
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
