@@ -89,7 +89,9 @@ public class Crop : MonoBehaviour
 
     public void OnCropDeath() 
     { 
-        cropVisualHolder.transform.localPosition = initialVisualPos;
+        cropVisual.sprite = FarmManager.Instance.DeadCrop;
+        Vector3 pos = new Vector3(0,0.5f,0);
+        cropVisualHolder.transform.localPosition = pos;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -101,7 +103,7 @@ public class Crop : MonoBehaviour
             OnCropDeath();
             crow.target = FarmManager.Instance.GetRandomCrop().transform;
             this.isDead = true;
-            this.transform.localScale = new Vector3(1, 0, 1);
+            //this.transform.localScale = new Vector3(1, 0, 1);
             FarmManager.Instance.aliveCrops.Remove(this);
             FarmManager.Instance.CheckGameOver();
         }

@@ -299,6 +299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1101113985}
   - {fileID: 1662102058}
   - {fileID: 351601046}
   m_Father: {fileID: 0}
@@ -372,22 +373,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrowManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1255150421883721525, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
-      propertyPath: crowRoot
-      value: 
-      objectReference: {fileID: 2080766161}
-    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
-      propertyPath: CrowSpawnRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
-      propertyPath: crowRoot.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
       propertyPath: 'crowRoot.Array.data[0]'
       value: 
@@ -400,14 +385,6 @@ PrefabInstance:
       propertyPath: 'crowRoot.Array.data[2]'
       value: 
       objectReference: {fileID: 944160067}
-    - target: {fileID: 2014470825757007102, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
-      propertyPath: 'crowRoot.Array.data[3]'
-      value: 
-      objectReference: {fileID: 944160067}
-    - target: {fileID: 4266798517321353137, guid: bccb418ea6f80c24e9c5b8ea8048aa51, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -476,6 +453,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7511486135058181723, guid: a960a38b26d0ebd42ac24cbb0d0266df, type: 3}
+      propertyPath: DeadCrop
+      value: 
+      objectReference: {fileID: 21300000, guid: c6ab47f50e6afa848bf7fbf76b775869, type: 3}
     - target: {fileID: 7511486135058181723, guid: a960a38b26d0ebd42ac24cbb0d0266df, type: 3}
       propertyPath: growIncrement
       value: 0.5
@@ -898,13 +879,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101113982}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10168474, y: 0.17851686, z: 0.061191034, w: 0.9767536}
+  m_LocalRotation: {x: 0.13051829, y: 0.18024796, z: 0.055886388, w: 0.9733203}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 10.183, y: 21.528, z: 9.11}
+  m_Father: {fileID: 270354730}
+  m_LocalEulerAnglesHint: {x: 13.528, y: 22.08, z: 9.224}
 --- !u!95 &1269828601 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8468121709488168159, guid: a6bbb9fb318f51a48ba58d6fa6ad5244, type: 3}
@@ -1394,7 +1375,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1101113985}
   - {fileID: 1531853991320988664}
   - {fileID: 290492646}
   - {fileID: 292961823}
