@@ -12,5 +12,11 @@ public class Player : MonoBehaviour
             Debug.Log("shoot");
             shootManager.Shoot();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("plant");
+            shootManager.Plant();
+        }
     }
 }

@@ -25,7 +25,10 @@ public class FarmManager : MonoBehaviour
     public int maxIncrementCount;
 
     public static FarmManager Instance;
-  
+
+    [SerializeField] private GameObject cropSample;
+
+    [SerializeField] private Transform cropRoot;
 
     public void Awake()
     {
@@ -90,6 +93,13 @@ public class FarmManager : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
+    }
+
+    public void PlantCrop(Vector3 position)
+    {
+        Crop crop = Instantiate(cropSample, position, Quaternion.identity, cropRoot).GetComponent<Crop>();
+        this.aliveCrops.Add(crop);
+        UiManager.instance.AddCorn();
     }
 
     public void Update()
