@@ -58,6 +58,7 @@ public class FarmManager : MonoBehaviour
     public void AddScore()
     {
         Score++;
+        UiManager.instance.UpdateScore(Score);
     }
 
     public void CheckGameOver()
