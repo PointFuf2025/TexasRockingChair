@@ -26,7 +26,7 @@ public class ShootManager : MonoBehaviour
     private float ShootDelay = 0.5f;
 
     [SerializeField]
-    private float PlantShootDelay = 5f;
+    public float PlantShootDelay = 5f;
 
     [SerializeField]
     private LayerMask ShootMask;
@@ -55,6 +55,22 @@ public class ShootManager : MonoBehaviour
     private Transform trailRoot;
 
     private float LastShootTime;
+
+    public float LastShootTimePlant;
+
+    public static ShootManager Instance;
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     public void Update()
     {
@@ -113,7 +129,7 @@ public class ShootManager : MonoBehaviour
 
     public void Plant()
     {
-        if (LastShootTime + PlantShootDelay < Time.time)
+        if (LastShootTimePlant + PlantShootDelay < Time.time)
         {
             // TODO tweak to have other anims
             audioSource.Play();
@@ -129,7 +145,7 @@ public class ShootManager : MonoBehaviour
                 FarmManager.Instance.PlantCrop(hit.point);
             }
 
-            LastShootTime = Time.time;
+            LastShootTimePlant = Time.time;
         }
     }
 
