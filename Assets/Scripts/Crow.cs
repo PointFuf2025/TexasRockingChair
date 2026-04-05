@@ -49,6 +49,8 @@ public class Crow : MonoBehaviour
         newPs.transform.parent = MouseController.instance.World;
         newPs.GetComponent<AudioSource>().clip = _clip;
         newPs.GetComponent<AudioSource>().Play();
+
+        this.cropTarget.isBeingEat = false;
     }
 
     // Update is called once per frame
@@ -96,6 +98,7 @@ public class Crow : MonoBehaviour
         }
         else
         {
+            this.cropTarget.isBeingEat = true;
             timer += Time.deltaTime;
         }
     }

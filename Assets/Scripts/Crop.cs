@@ -10,6 +10,7 @@ public class Crop : MonoBehaviour
     int growCount;
 
     public bool isDead = false;
+    public bool isBeingEat = false;
 
     public GameObject cropVisualHolder;
     public SpriteRenderer cropVisual;
@@ -37,14 +38,13 @@ public class Crop : MonoBehaviour
         { 
             cropVisual.flipX = true;
         }
-
-        dangerSprite.color = Color.clear;
     }
 
     // Update is called once per frame
     void Update()
     {
         cropVisual.transform.LookAt(Camera.main.transform.position);
+        dangerSprite.color = isBeingEat ? Color.white : Color.clear;
         if (isDead)
         {
             return;
@@ -103,6 +103,7 @@ public class Crop : MonoBehaviour
         UiManager.instance.RemoveCorn();
         FarmManager.Instance.CheckGameOver();
         this.isDead = true;
+        this.isBeingEat = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -113,7 +114,6 @@ public class Crop : MonoBehaviour
             dangerSprite.color = Color.white;
         }
         
-        // TODO change this so its the crows that check and use a timer to eat the crop
         Crow crow = other.GetComponent<Crow>();
         if (crow != null && crow.cropTarget == this)
         {
