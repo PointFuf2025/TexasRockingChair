@@ -18,8 +18,11 @@ public class Crop : MonoBehaviour
     public Vector3 initialVisualPos;
     public Vector3 currentPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    
     void Start()
     {
+        FarmManager.Instance.crops.Add(this);
         cropVisualHolder = transform.GetChild(0).gameObject;
         cropVisual = cropVisualHolder.GetComponentInChildren<SpriteRenderer>();
         initialVisualPos = cropVisualHolder.transform.localPosition;
@@ -30,6 +33,7 @@ public class Crop : MonoBehaviour
         { 
             cropVisual.flipX = true;
         }
+
     }
 
     // Update is called once per frame

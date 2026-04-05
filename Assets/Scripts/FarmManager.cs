@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class FarmManager : MonoBehaviour
 {
     [SerializeField]
-    private Crop[] crops;
+    public List<Crop> crops;
 
     public List<Crop> aliveCrops = new List<Crop>();
 
@@ -19,24 +19,26 @@ public class FarmManager : MonoBehaviour
     public float cropMaxSize = 5f;
     public int maxIncrementCount;
 
-    private static FarmManager _instance;
+    public static FarmManager Instance;
+  
 
-    public static FarmManager Instance
+    public void Awake()
     {
-        get
-        {
-            if (_instance == null)
+        
+            if (Instance != null && Instance != this)
             {
-                _instance = GameObject.FindAnyObjectByType<FarmManager>();
+                Destroy(this);
             }
-
-            return _instance;
-        }
+            else
+            {
+                Instance = this;
+            }
+            crops = new List<Crop>();
     }
 
     public void Start()
     {
-        for (int i = 0; i < crops.Length; i++)
+        for (int i = 0; i < crops.Count; i++)
         {
             aliveCrops.Add(crops[i]);
         }
