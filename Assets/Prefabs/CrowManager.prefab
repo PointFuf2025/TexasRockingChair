@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037028545891815976}
   - component: {fileID: 2014470825757007102}
+  - component: {fileID: 4266798517321353137}
   m_Layer: 0
   m_Name: CrowManager
   m_TagString: Untagged
@@ -49,10 +50,113 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 928ec58914d8abc4d877c87dcf47a269, type: 3}
   - {fileID: 8300000, guid: 409a44179a437ea499da167718383549, type: 3}
   - {fileID: 8300000, guid: 04158f06337308943a469dda20971f1c, type: 3}
+  - {fileID: 8300000, guid: df8d1b87f3441094d993eb073a6e086b, type: 3}
+  - {fileID: 8300000, guid: 89e97e20d682e1146b6a591d8d11b1f1, type: 3}
   - {fileID: 8300000, guid: f84bf4d1bdd6658419dff5f1b490d517, type: 3}
+  - {fileID: 8300000, guid: 9bedc1ee258d44a4a97a74b5216252f0, type: 3}
+  - {fileID: 8300000, guid: 60096b38d96249f48a8bdfe8ccad6d28, type: 3}
+  - {fileID: 8300000, guid: 28d4dec0e1e09174380847992ef2b9ec, type: 3}
+  crowSpawnSound: {fileID: 4266798517321353137}
   crowList: []
   CrowSpawnRate: 3
   crowSample: {fileID: 8223985583754485001, guid: 4ad23c8d3d62127459133065d4c80c69, type: 3}
   crowRoot: {fileID: 0}
   spawnRadius: 10
   crowDeathEffect: {fileID: 8745583911162945494, guid: abee5f400176eea47ae88dd5bdd09e33, type: 3}
+--- !u!82 &4266798517321353137
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255150421883721525}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d0a0fd969961cca459d26b7cff1f5c7b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

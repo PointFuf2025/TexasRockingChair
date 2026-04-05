@@ -6,6 +6,8 @@ public class CrowManager : MonoBehaviour
     [SerializeField] private AudioClip initCorbSound;
     [SerializeField] private AudioClip[] crowDeathSound;
 
+    [SerializeField] private AudioSource crowSpawnSound;
+
     public AudioClip GetRandomDeathSound() 
     { 
         AudioClip predicate = null;
@@ -53,7 +55,7 @@ public class CrowManager : MonoBehaviour
         {
             Vector2 randomPoint = Random.insideUnitSphere * spawnRadius;
             Vector3 spawnPosition = crowRoot.position + new Vector3(randomPoint.x, 0, randomPoint.y);
-
+            crowSpawnSound.Play();
             var crowObject = Instantiate(crowSample, spawnPosition, Quaternion.identity, crowRoot);
             var crow = crowObject.GetComponent<Crow>();
             crowList.Add(crow);
@@ -63,6 +65,11 @@ public class CrowManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+    }
+
+    public void GetSpawnPosition()
+    { 
+        
     }
 
     public void KillCrow(Crow crow)
