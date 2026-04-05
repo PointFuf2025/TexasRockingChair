@@ -34,7 +34,7 @@ public class MouseController : MonoBehaviour
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
         yRotation += mouseX;
-        xRotation -= mouseY;
+        xRotation += mouseY;
         xRotation = Mathf.Clamp(xRotation,-50f, 50f);
         World.transform.rotation = Quaternion.Euler(0,yRotation ,0 );
         CrossHairPivot.transform.rotation = Quaternion.Euler(xRotation ,0,0);
