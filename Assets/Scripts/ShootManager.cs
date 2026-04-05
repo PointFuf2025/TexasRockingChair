@@ -77,7 +77,7 @@ public class ShootManager : MonoBehaviour
         // mouvement de balancier
         if (Input.GetKey(KeyCode.Space))
         {
-            var direction = (rb.transform.position -ForcePoint.position) * 0.5f;
+            var direction = (rb.transform.position -ForcePoint.position) * 1f;
             rb.AddForce(direction, ForceMode.Acceleration);
         }
     }
