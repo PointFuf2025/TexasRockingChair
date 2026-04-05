@@ -46,6 +46,15 @@ public class ShootManager : MonoBehaviour
 
     private float LastShootTime;
 
+    public void Update()
+    {
+        // mouvement de balancier
+        if (Input.GetKey(KeyCode.Space))
+        {
+            var direction = (rb.transform.position -ForcePoint.position) * 0.5f;
+            rb.AddForce(direction, ForceMode.Acceleration);
+        }
+    }
     public void Shoot()
     {
         if (LastShootTime + ShootDelay < Time.time)
@@ -60,7 +69,7 @@ public class ShootManager : MonoBehaviour
                 
                 Vector3 direction = GetDirection();
 
-                Debug.DrawRay(BulletSpawnPoint.position, direction, Color.blue, 100f);
+                Debug.DrawRay(BulletSpawnPoint.position, direction, Color.blue, 3f);
                 if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
                 {
                     Debug.Log($"raycast hit{hit.collider.name}");
