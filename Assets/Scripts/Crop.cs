@@ -18,9 +18,13 @@ public class Crop : MonoBehaviour
     public Vector3 initialVisualPos;
     public Vector3 currentPos;
     public Transform topTarget;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-    
+
+    // anim
+    [SerializeField]
+    private Animation dangerAnimation;
+    [SerializeField]
+    private SpriteRenderer dangerSprite;
+
     void Start()
     {
         cropVisualHolder = transform.GetChild(0).gameObject;
@@ -34,6 +38,7 @@ public class Crop : MonoBehaviour
             cropVisual.flipX = true;
         }
 
+        dangerSprite.color = Color.clear;
     }
 
     // Update is called once per frame
@@ -88,7 +93,8 @@ public class Crop : MonoBehaviour
     }
 
     public void OnCropDeath() 
-    { 
+    {
+        dangerSprite.color = Color.clear;
         cropVisual.sprite = FarmManager.Instance.DeadCrop;
         Vector3 pos = new Vector3(0,0.5f,0);
         cropVisualHolder.transform.localPosition = pos;
@@ -101,6 +107,12 @@ public class Crop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!dangerAnimation.isPlaying)
+        {
+            dangerAnimation.Play();
+            dangerSprite.color = Color.white;
+        }
+        
         // TODO change this so its the crows that check and use a timer to eat the crop
         Crow crow = other.GetComponent<Crow>();
         if (crow != null && crow.cropTarget == this)

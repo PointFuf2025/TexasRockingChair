@@ -16,6 +16,9 @@ public class Crow : MonoBehaviour
     private bool isEatingCrop = false;
     public Crop cropTarget;
 
+    [SerializeField] 
+    private AudioSource crowEatingSound;
+
     private float timer = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -66,6 +69,11 @@ public class Crow : MonoBehaviour
 
         if (!isEatingCrop)
         {
+            if (this.crowEatingSound.isPlaying)
+            {
+                this.crowEatingSound.Pause();
+            }
+            
             return;
         }
 
@@ -91,5 +99,6 @@ public class Crow : MonoBehaviour
     public void StartEatCrop()
     {
         this.isEatingCrop = true;
+        this.crowEatingSound.Play();
     }
 }
