@@ -6422,15 +6422,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 382757711664661586, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1652.8348
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 382757711664661586, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 291.3586
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 382757711664661586, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 382757711664661586, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6463,22 +6463,6 @@ PrefabInstance:
     - target: {fileID: 4939314465865944874, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
       propertyPath: m_Name
       value: MusicManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972623347218764547, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
-      propertyPath: musique.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4972623347218764547, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
-      propertyPath: 'musique.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: dbdfb8ae858fd104a879d26eb245185d, type: 3}
-    - target: {fileID: 4972623347218764547, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
-      propertyPath: 'musique.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 59f9f639ade57f54cb5b9fef11f74294, type: 3}
-    - target: {fileID: 8024599463713776095, guid: 24ffea7fc24bc7b43a8b61e8218fe51f, type: 3}
-      propertyPath: Loop
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
