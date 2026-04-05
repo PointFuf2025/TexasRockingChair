@@ -45,6 +45,7 @@ public class FarmManager : MonoBehaviour
         for (int i = 0; i < crops.Length; i++)
         {
             aliveCrops.Add(crops[i]);
+            UiManager.instance.AddCorn();
         }
     }
 

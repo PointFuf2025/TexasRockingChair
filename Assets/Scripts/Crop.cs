@@ -94,6 +94,7 @@ public class Crop : MonoBehaviour
         cropVisualHolder.transform.localPosition = pos;
         FarmManager.Instance.cropDeathSound.Play();
         FarmManager.Instance.aliveCrops.Remove(this);
+        UiManager.instance.RemoveCorn();
         FarmManager.Instance.CheckGameOver();
         this.isDead = true;
     }
