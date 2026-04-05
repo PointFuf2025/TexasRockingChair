@@ -99,6 +99,7 @@ public class FarmManager : MonoBehaviour
     {
         Crop crop = Instantiate(cropSample, position, Quaternion.identity, cropRoot).GetComponent<Crop>();
         this.aliveCrops.Add(crop);
+        UiManager.instance.AddCorn();
     }
 
     public void Update()
