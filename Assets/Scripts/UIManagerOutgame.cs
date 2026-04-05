@@ -13,6 +13,11 @@ public class UIManagerOutgame : MonoBehaviour
     [SerializeField] private Camera creditCamera;
     [SerializeField] private Camera controlsCamera;
     [SerializeField] private CameraMainMenu camInstance;
+
+    [SerializeField] private AudioSource startGameSound;
+    [SerializeField] private AudioSource music;
+    [SerializeField] private GameObject fadeUi;
+    [SerializeField] private AudioSource clickSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     private void Awake()
@@ -23,6 +28,11 @@ public class UIManagerOutgame : MonoBehaviour
         controlsButton.onClick.AddListener(this.ShowControls);
     }
 
+    public void PlayButtonSound() 
+    { 
+        clickSound.Play();
+    }
+
     public void ShowCredits() 
     { 
         camInstance.currentCam.gameObject.SetActive(false);
@@ -31,6 +41,7 @@ public class UIManagerOutgame : MonoBehaviour
         playButton.gameObject.SetActive(false);
         creditButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);
+        clickSound.Play();
     }
 
     public void ShowControls()
@@ -41,6 +52,7 @@ public class UIManagerOutgame : MonoBehaviour
         playButton.gameObject.SetActive(false);
         creditButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(true);
+        clickSound.Play();
     }
 
     public void ExitCreditsOrControls() 
@@ -54,10 +66,17 @@ public class UIManagerOutgame : MonoBehaviour
         controlsButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(false);
         camInstance.timer = 0;
+        clickSound.Play();
     }
 
     public void Play()
     {
-        SceneManager.LoadScene("LD");
+        music.Stop();
+        
+        Timer t_startGame = new Timer(2.2f);
+        fadeUi.SetActive(true);
+        t_startGame.OnTimerEnd += () => { SceneManager.LoadScene("LD"); };
+        startGameSound.Play();
+        t_startGame.Play();
     }
 }
