@@ -9,7 +9,7 @@ public class Crop : MonoBehaviour
 
     int growCount;
 
-    bool isDead = false;
+    public bool isDead = false;
 
     public GameObject cropVisualHolder;
     public SpriteRenderer cropVisual;
@@ -17,12 +17,12 @@ public class Crop : MonoBehaviour
     AudioSource cropAudio;
     public Vector3 initialVisualPos;
     public Vector3 currentPos;
+    public Transform topTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     
     void Start()
     {
-        FarmManager.Instance.crops.Add(this);
         cropVisualHolder = transform.GetChild(0).gameObject;
         cropVisual = cropVisualHolder.GetComponentInChildren<SpriteRenderer>();
         initialVisualPos = cropVisualHolder.transform.localPosition;
@@ -93,20 +93,18 @@ public class Crop : MonoBehaviour
         Vector3 pos = new Vector3(0,0.5f,0);
         cropVisualHolder.transform.localPosition = pos;
         FarmManager.Instance.cropDeathSound.Play();
+        FarmManager.Instance.aliveCrops.Remove(this);
+        FarmManager.Instance.CheckGameOver();
+        this.isDead = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         // TODO change this so its the crows that check and use a timer to eat the crop
         Crow crow = other.GetComponent<Crow>();
-        if (crow != null && crow.target == this.transform)
+        if (crow != null && crow.cropTarget == this)
         {
-            OnCropDeath();
-            crow.target = FarmManager.Instance.GetRandomCrop().transform;
-            this.isDead = true;
-            //this.transform.localScale = new Vector3(1, 0, 1);
-            FarmManager.Instance.aliveCrops.Remove(this);
-            FarmManager.Instance.CheckGameOver();
+            crow.StartEatCrop();
         }
     }
 }
