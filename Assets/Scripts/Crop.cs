@@ -92,6 +92,7 @@ public class Crop : MonoBehaviour
         cropVisual.sprite = FarmManager.Instance.DeadCrop;
         Vector3 pos = new Vector3(0,0.5f,0);
         cropVisualHolder.transform.localPosition = pos;
+        FarmManager.Instance.cropDeathSound.Play();
     }
 
     private void OnTriggerEnter(Collider other)

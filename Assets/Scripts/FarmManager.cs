@@ -12,6 +12,8 @@ public class FarmManager : MonoBehaviour
     [SerializeField]
     private int Score;
 
+    [SerializeField] public AudioSource cropDeathSound;
+
     [SerializeField] public Sprite DeadCrop;
 
     public float growIncrement;
