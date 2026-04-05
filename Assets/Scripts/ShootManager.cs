@@ -26,7 +26,7 @@ public class ShootManager : MonoBehaviour
     private float ShootDelay = 0.5f;
 
     [SerializeField]
-    public float PlantShootDelay = 5f;
+    public float PlantShootDelay = 8f;
 
     [SerializeField]
     private LayerMask ShootMask;

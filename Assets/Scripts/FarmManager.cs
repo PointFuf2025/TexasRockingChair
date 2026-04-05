@@ -77,6 +77,11 @@ public class FarmManager : MonoBehaviour
     {
         int randomCropIndex = Random.Range(0, aliveCrops.Count - 1);
 
+        if (randomCropIndex < 0 || aliveCrops.Count == 0)
+        {
+            return null;
+        }
+
         return aliveCrops[randomCropIndex];
     }
 
@@ -91,7 +96,7 @@ public class FarmManager : MonoBehaviour
     {
         if (aliveCrops.Count <= 0) 
         {
-            SceneManager.LoadScene("MainMenu");
+            UiManager.instance.ShowLoosePanel();
         }
     }
 

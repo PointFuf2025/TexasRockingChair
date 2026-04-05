@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
@@ -14,6 +15,14 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Image cooldownFillImage;
     public static UiManager instance;
     public int cropCount;
+    public int killedCrows = 0;
+
+    // Loose panel
+    [SerializeField] private TMP_Text scoreTextLoose;
+    [SerializeField] private TMP_Text killedCrowsTextLoose;
+    [SerializeField] private GameObject looseCanvas;
+    [SerializeField] private GameObject gameCanvas;
+    [SerializeField] private Button continueButton;
 
     private void Awake()
     {
@@ -25,6 +34,10 @@ public class UiManager : MonoBehaviour
         {
             instance = this;
         }
+
+        killedCrows = 0;
+        continueButton.onClick.AddListener(BackToMainMenu);
+        this.looseCanvas.SetActive(false);
     }
 
     public void AddCorn() 
@@ -56,5 +69,19 @@ public class UiManager : MonoBehaviour
         bool showText = cooldownRatio >= 1f;
         this.tutoText.alpha = showText ? 1f : 0f;
         this.shotReadyText.alpha = showText ? 1f : 0f;
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ShowLoosePanel()
+    {
+        this.gameCanvas.SetActive(false);
+        this.looseCanvas.SetActive(true);
+        scoreTextLoose.text = scoreText.text;
+        killedCrowsTextLoose.text = killedCrows.ToString();
+        Cursor.lockState = CursorLockMode.None;
     }
 }

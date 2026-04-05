@@ -46,6 +46,9 @@ public class CrowManager : MonoBehaviour
     [SerializeField]
     private GameObject crowDeathEffect;
 
+    [SerializeField]
+    public Transform defaultTarget;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

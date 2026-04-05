@@ -19,6 +19,8 @@ public class Crow : MonoBehaviour
     private bool isEatingCrop = false;
     public Crop cropTarget;
 
+    public Transform defaultTarget;
+
     [SerializeField] 
     private AudioSource crowEatingSound;
 
@@ -27,6 +29,7 @@ public class Crow : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        this.defaultTarget = CrowManager.instance.defaultTarget;
         cropTarget = FarmManager.Instance.GetRandomCrop();
         crowVisual = transform.GetChild(0).gameObject;
         crowVisual.transform.localPosition = Vector3.zero;
@@ -51,11 +54,21 @@ public class Crow : MonoBehaviour
         newPs.GetComponent<AudioSource>().Play();
 
         this.cropTarget.isBeingEat = false;
+        UiManager.instance.killedCrows++;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (cropTarget == null)
+        {
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                defaultTarget.position,
+                speed * Time.deltaTime);
+            return;
+        }
+
         // Move towards the target position
         transform.position = Vector3.MoveTowards(
             transform.position,
