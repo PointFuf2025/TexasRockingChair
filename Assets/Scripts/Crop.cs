@@ -96,7 +96,6 @@ public class Crop : MonoBehaviour
         FarmManager.Instance.aliveCrops.Remove(this);
         FarmManager.Instance.CheckGameOver();
         this.isDead = true;
-orm.localScale = new Vector3(1, 0, 1);
     }
 
     private void OnTriggerEnter(Collider other)
