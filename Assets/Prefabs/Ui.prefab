@@ -128,7 +128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -414,6 +414,8 @@ MonoBehaviour:
   scoreText: {fileID: 6530396844366214917}
   cornCountItem: {fileID: 6048875398420233526, guid: 62204687f65579a4893f2badbf262e02, type: 3}
   cornCountainer: {fileID: 972827447610867285}
+  scoreAnim: {fileID: 0}
+  scorePS: {fileID: 0}
   cornIndex: 0
 --- !u!1 &8647729442868041606
 GameObject:
